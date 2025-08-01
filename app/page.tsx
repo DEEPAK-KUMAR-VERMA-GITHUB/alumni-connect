@@ -1,103 +1,141 @@
-import Image from "next/image";
+import { FeatureCard } from "@/components/feature-card";
+import { LeaderBoardCard } from "@/components/leaderboard-card";
+import { QuestionCard } from "@/components/question-card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Globe, MessageCircleQuestion, Star, Target, Trophy, User, Users, Zap } from "lucide-react";
+import { features, LeaderBoard, questions } from "./data";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="select-none">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* hero header section */}
+      <section id="header" className="bg-gradient-to-br from-blue-500 to-violet-500 p-16 text-center" >
+
+        <div className="max-w-7xl mx-auto flex flex-col justify-center gap-8 items-center " >
+          <h1 className="text-6xl font-bold text-white">University Alumni Connect</h1>
+
+          <h3 className="text-white text-2xl" >Bridge the gap between current students and successful alumni. Share knowledge, find mentors, and build lasting professional connections.</h3>
+
+          <div className="flex text-center text-white gap-8" >
+            <span>
+              <h2 className="text-4xl font-bold" >
+                500+
+              </h2>
+              <h6 className="text-md">
+                Alumni
+              </h6>
+            </span>
+
+            <span>
+              <h2 className="text-4xl font-bold" >1,200+</h2>
+              <h6 className="text-md">Students</h6>
+            </span>
+
+            <span>
+              <h2 className="text-4xl font-bold" >2,500+</h2>
+              <h6 className="text-md">Q&A Answered</h6>
+            </span>
+          </div>
+
+          <div className="flex gap-8" >
+            <Button variant={"default"} size={"lg"} >Join as Alumni</Button>
+            <Button variant={"outline"} size={"lg"} >Register as Student</Button>
+          </div></div>
+
+      </section>
+
+      {/* hero main section */}
+
+      <section id="hero-body" className="bg-gray-100" >
+        {/* platform features */}
+        <div className="max-w-7xl mx-auto p-10 sm:p-20 flex flex-col gap-8 items-center text-center">
+
+          <Badge variant={"outline"} className="bg-amber-100 border-amber-200 px-3 pointer-events-none" >
+            <Zap />
+            Platform Features
+          </Badge>
+
+
+          <h3 className="text-3xl font-bold" >Everything You Need to Connect & Grow</h3>
+          <h4 className="text-gray-400 font-semibold" >Our platform bridges the gap between ambitious students and successful alumni, creating meaningful connections that drive career growth.</h4>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 " >{
+            features.map((feature, idx) => <FeatureCard key={idx} feature={feature} />)
+          }</div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* q&a forum */}
+        <div className="max-w-7xl mx-auto p-10 lg:p-20 flex flex-col gap-8 items-center text-center">
+
+          <Badge variant={"outline"} className="bg-red-100 border-red-200 px-3 pointer-events-none" >
+            <MessageCircleQuestion />
+            Q&A Forum
+          </Badge>
+
+          <h3 className="text-3xl font-bold" >Get Answers from Industry Experts</h3>
+          <h4 className="text-gray-400 font-semibold" >Ask questions, share knowledge, and learn from the experiences of successful alumni.</h4>
+
+          <div className="flex flex-wrap xl:flex-nowrap gap-4 justify-evenly" >{
+            questions.map((question, idx) => <QuestionCard key={idx} question={question} />)
+          }
+          </div>
+
+          <Button variant={"default"} size={"lg"} >Ask a Question ?</Button>
+        </div>
+
+        {/* leaderboard */}
+        <div className="max-w-7xl mx-auto p-10 flex flex-col gap-8 items-center text-center">
+          <Badge variant={"outline"} className="bg-amber-100 border-amber-200 text-amber-400 px-3 pointer-events-none" >
+            <Trophy />
+            Community Recognition
+          </Badge>
+
+          <h3 className="text-3xl font-bold" >Top Contributing Alumni</h3>
+          <h4 className="text-gray-400 font-semibold" >Celebrating our most active community members who make a difference.</h4>
+
+          <div className="flex gap-2 sm:gap-4 flex-wrap justify-center " >
+            {
+              LeaderBoard.map((leader, idx) => <LeaderBoardCard key={idx} leader={leader} leaderboard_positon={idx + 1} />)
+            }
+          </div>
+
+
+
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-blue-500 to-violet-500 py-20 px-6">
+        {/* join community */}
+
+        <div className=" max-w-7xl mx-auto flex flex-col items-center gap-6 text-center text-white" >
+          <h1 className="text-3xl font-bold" >Ready to Join Our Community ? </h1>
+          <h4 className="text-lg" >Connect with fellow alumni, mentor current students, and build meaningful professional relationships that last a lifetime.</h4>
+          <div className="flex gap-3" >
+            <Button size={"lg"} >
+              <Users /> Join as Alumni <ArrowRight />
+            </Button>
+            <Button size={"lg"} variant={"outline"} >
+              <User /> I&apos;m Student
+            </Button>
+          </div>
+
+          <div className="flex gap-2 sm:gap-5 justify-center">
+            <span className="flex items-center gap-2 text-sm">
+              <Star size={18} className="text-amber-400" />
+              Free to join
+            </span>
+            <span className="flex items-center gap-2 text-sm">
+              <Target size={18} className="text-amber-400" /> Verified alumni
+            </span>
+            <span className="flex items-center gap-2 text-sm">
+              <Globe size={18} className="text-amber-400" /> Global network
+            </span>
+          </div>
+
+        </div>
+      </section>
+    </main>
   );
 }
