@@ -1,5 +1,5 @@
-import { FeatureItem, QACardItem } from "@/types/landing-page";
-import { MessageCircle, BookOpen, Users, Award } from 'lucide-react'
+import { FeatureItem, LeaderBoardItem, QACardItem } from "@/types/landing-page";
+import { Award, BookOpen, MessageCircle, Users } from 'lucide-react';
 
 export const features: FeatureItem[] = [
     {
@@ -31,7 +31,8 @@ export const questions: QACardItem[] = [
         post: "Software Engineer",
         question: "What are the best resources for learning web development?",
         likes: 10,
-        answers: 5
+        answers: 5,
+        tags: ["Career", "Technology", "Portfolio"]
     },
     {
         avatar: "globe.svg",
@@ -39,7 +40,8 @@ export const questions: QACardItem[] = [
         question: "How do I improve my resume for a job interview?",
         likes: 10,
         answers: 5,
-        post: "Talent Aqasition"
+        post: "Talent Aqasition",
+        tags: ["Career", "Technology", "Portfolio"]
     },
     {
         avatar: "globe.svg",
@@ -47,6 +49,34 @@ export const questions: QACardItem[] = [
         question: "Best practices for technical interviews at FAANG companies?",
         likes: 10,
         answers: 5,
-        post: "UX Designer"
+        post: "UX Designer",
+        tags: ["Career", "Technology", "Portfolio"]
+    }
+]
+
+export const LeaderBoard: LeaderBoardItem[] = [
+    {
+        avatar: "globe.svg",
+        name: "Dr. Alex Thompson",
+        company: "Google",
+        passout: 2015,
+        badges: ["Top Mentor", "Knowledge Sharer", "Community Builder"],
+        points: 2540,
+    },
+    {
+        avatar: "globe.svg",
+        name: "Dr. Alex Thompson",
+        company: "Google",
+        passout: 2015,
+        badges: ["Top Mentor", "Knowledge Sharer", "Community Builder"],
+        points: 2450,
+    },
+    {
+        avatar: "globe.svg",
+        name: "Dr. Alex Thompson",
+        company: "Google",
+        passout: 2015,
+        badges: ["Top Mentor", "Knowledge Sharer", "Community Builder"],
+        points: 2340,
     }
 ]

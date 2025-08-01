@@ -14,4 +14,14 @@ export type QACardItem = {
     question: string;
     likes: number;
     answers: number;
+    tags: Array<string>;
+}
+
+export type LeaderBoardItem = {
+    avatar: string;
+    name: string;
+    company: string;
+    points: number;
+    passout: number;
+    badges: Array<string>
 }

@@ -31,7 +31,7 @@ const navItems: NavItems[] = [
 
 export const Navbar = () => {
     return (
-        <nav className='bg-blue-500 w-full sticky top-0 shadow ' >
+        <nav className='bg-blue-500 w-full sticky top-0 shadow z-10' >
 
             <div className='flex items-center max-w-7xl mx-auto justify-between p-6 text-white' >
                 {/* left logo */}
